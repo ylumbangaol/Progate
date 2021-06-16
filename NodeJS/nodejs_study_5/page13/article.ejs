@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <%- include('header'); %>
+    <main>
+      <div class="article">
+        <!-- Write the code for when article.category is all -->
+        <% if (article.category === 'all') { %>
+          <h1><%= article.title %></h1>
+          <p><%= article.content %></p>
+        <% } %>
+        
+        <!-- Write the code for when article.category is limited -->
+        <% if (article.category === 'limited') { %>
+          <i>MEMBERS ONLY</i>
+          <h1><%= article.title %></h1>
+          <p><%= article.content %></p>
+        <% } %>
+        <!-- Remove the code below -->
+
+        <!-- Remove the code above -->
+      </div>
+    </main>
+    <footer>
+      <a class="btn sub" href="/list">Back to articles</a>
+    </footer>
+  </body>
+</html>
